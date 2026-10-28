@@ -3,17 +3,30 @@ package JAVA;
 public class Armas
 {
     //---------------------ATRIBUTOS----------------
+    private String nombre;
     private int danyo;
     private int durabilidad;
    
     //--------------------CONTRUCTOR PIRNCIPAL---------------
-    public Armas(int danyo, int durabilidad)
+    public Armas(String nombre, int danyo, int durabilidad)
     {
+        this.nombre = nombre;
         this.danyo = danyo;
         this.durabilidad = durabilidad;
     }
    
     //-----------------------GETTERS / SETTERS---------------
+    
+    public String getNombre()
+    {
+        return nombre;
+    }
+
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+    
     public int getDanyo() {
         return danyo;
     }
@@ -36,16 +49,17 @@ public class Armas
 
     //-----------------METODOS-------------
    
-    public int DuracionArma(int durabilidad)
+    public int usarArma()
     {
-        while(durabilidad != 0)
+        if (this.durabilidad > 0) 
         {
-            this.durabilidad = --durabilidad;
-            return durabilidad;
+            this.durabilidad--;
         }
-        System.out.print("Tu arma se ha roto");
-        setDurabilidad(durabilidad);
-        return durabilidad;
-    }
+        if (this.durabilidad == 0)
+        {
+            System.out.println("Tu arma se ha roto");
+        }
+        return this.durabilidad;
+}
 
 }
