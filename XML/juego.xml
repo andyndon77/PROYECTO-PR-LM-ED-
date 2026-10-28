@@ -1,0 +1,81 @@
+<juego> <!-- mostrar tambien cuando el jugador gane -->
+    <newPartida>
+        <aventura>
+            <aventuraOn>
+                <heroe vida = "100">
+                    <pocion>+25 vida</pocion>
+                    <pocion>+25 vida</pocion>
+                    <pocion>+25 vida</pocion>
+
+                    <ataque>
+                        <normal>10</normal>
+                        <critico>20</critico>
+                    </ataque>
+                </heroe>
+
+                <encuentros>
+                    <encuentro>
+                        <tungtungSahur vida = "40"> 
+                            <ataque cantidad = "1">
+                                <punyo probabilidad = "alta">5</punyo>
+                                <batazo probabilidad = "baja">15</batazo>
+                            </ataque>
+                        </tungtungSahur>
+                    </encuentro>
+                        <ballerinacappuccina>
+                            <ataque cantidad = "1 o 2">
+                                
+                            </ataque>
+                        </ballerinacappuccina>
+                    <encuentro>
+
+                    </encuentro>
+                    <encuentro>
+
+                    </encuentro>
+                </encuentros>
+
+            </aventuraOn>
+            <aventuraOff>
+                <finalMalo vida ="&lt; 100">
+                    <Mensaje>
+                        Has sido derrotado por un monstruo.
+                        Quieres abadonar o vovler a intentarlo.
+                        Si abandonas el progreso no se te guarda
+                    </Mensaje>
+                </finalMalo>
+
+                <finalMalo abandono = "YES">
+                    <Mensaje>Acabas de abandonar la partida, ten encuenta que tu progreso no se guardara</Mensaje>
+                </finalMalo>
+
+                <finalBueno >
+
+                </finalBueno>
+            </aventuraOff>
+        </aventura>   
+    </newPartida>
+    <!-- .................................................... -->
+    <seeRanking>
+        <mostrarRanking>Aqui se mostrara el ranking de sus partidas juagadas. Aprox de las ultimas 5.
+        </mostrarRanking>
+    </seeRanking>
+    <!-- .................................................... -->
+    <ayuda>
+        <reglasJuego>
+
+        </reglasJuego>
+        <actuaciones>
+
+        </actuaciones>
+        <puntuacion>
+
+        </puntuacion>
+
+    </ayuda>
+    <!-- .................................................... -->
+    <salirdelJuego>
+        <salir>Se sale del juego sin ni si quiera empezar</salir>
+    </salirdelJuego>
+
+</juego>
