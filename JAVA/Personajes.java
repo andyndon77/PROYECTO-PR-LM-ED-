@@ -73,15 +73,21 @@ public class Personajes
 
     public int hacerDaño(int vida, int danyo)
     {
-        vida = this.vida - danyo;
-        return this.vida;
+        vida = vida - danyo;
+        System.out.println("Le has hecho " + danyo + " de daño. Le quedan " + vida + " puntos de vida");
+        return vida;
+
     }
 
 
-    public int recibirDaño(int vida, int danyo)
+    public int recibirDaño(int danyo)
     {
-        vida = vida - this.danyo;
-        return vida;
+        this.vida -= danyo;
+        if(this.vida < 0)
+        {
+            this.vida = 0;
+        }
+        return this.vida;
     }
 
 }
