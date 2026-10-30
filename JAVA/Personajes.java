@@ -13,7 +13,7 @@ public class Personajes
 
     public Personajes(String nombre, int vida, int danyo, int numAtaque, int numArmas)
     {
-        this.nombre = "Desconocido";
+        this.nombre = nombre;
         this.vida = vida;
         this.danyo = danyo;
         this.numAtaque = numAtaque;
@@ -73,7 +73,7 @@ public class Personajes
 
     public int hacerDanyo(int vida, int danyo)
     {
-        vida = vida - danyo;
+        vida = vida - this.danyo;
         System.out.println("Le has hecho " + danyo + " de daño. Le quedan " + vida + " puntos de vida");
         return vida;
 
@@ -88,6 +88,11 @@ public class Personajes
             this.vida = 0;
         }
         return this.vida;
+    }
+
+    public int Atacar()
+    {
+        return hacerDanyo(vida, danyo);
     }
 
 }
