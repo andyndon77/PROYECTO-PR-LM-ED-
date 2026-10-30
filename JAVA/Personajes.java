@@ -4,11 +4,11 @@ public class Personajes
 {
 
 
-    private String nombre;
-    private int vida = 100;
-    private int danyo;
-    private int numAtaque = 1;
-    private int numArmas;
+    protected String nombre;
+    protected int vida = 100;
+    protected int danyo;
+    protected int numAtaque = 1;
+    protected int numArmas;
 
 
     public Personajes(String nombre, int vida, int danyo, int numAtaque, int numArmas)
@@ -71,7 +71,7 @@ public class Personajes
     //------------------- Metodos de los personajes ---------------
 
 
-    public int hacerDaño(int vida, int danyo)
+    public int hacerDanyo(int vida, int danyo)
     {
         vida = vida - danyo;
         System.out.println("Le has hecho " + danyo + " de daño. Le quedan " + vida + " puntos de vida");
@@ -80,7 +80,7 @@ public class Personajes
     }
 
 
-    public int recibirDaño(int danyo)
+    public int recibirDanyo(int danyo)
     {
         this.vida -= danyo;
         if(this.vida < 0)
