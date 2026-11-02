@@ -10,7 +10,7 @@ public class Personajes
     protected int numAtaque = 1;
     protected int numArmas;
 
-
+    //constructor del heroe
     public Personajes(String nombre, int vida, int danyo, int numAtaque, int numArmas)
     {
         this.nombre = nombre;
@@ -18,6 +18,15 @@ public class Personajes
         this.danyo = danyo;
         this.numAtaque = numAtaque;
         this.numArmas = numArmas;
+    }
+
+    //constructor de los enemigos
+    public Personajes(String nombre, int vida, int danyo, int numAtaque)
+    {
+        this.nombre = nombre;
+        this.vida = vida;
+        this.danyo = danyo;
+        this.numAtaque = numAtaque;
     }
     // ------------ Setters / Getter--------------
 
@@ -73,7 +82,7 @@ public class Personajes
 
     public int hacerDanyo(int vida, int danyo)
     {
-        vida = vida - this.danyo;
+        vida = vida - this.danyo * getNumAtaque();
         System.out.println("Le has hecho " + danyo + " de daño. Le quedan " + vida + " puntos de vida");
         return vida;
 

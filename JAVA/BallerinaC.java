@@ -5,13 +5,14 @@ class BallerinaC extends Personajes
 {
     Random rd = new Random();
 
-    public BallerinaC(String nombre, int vida, int danyo, int numAtaque, int numArmas)
+    public BallerinaC(String nombre, int vida, int danyo, int numAtaque)
     {
-        super(nombre, vida, danyo, numAtaque, numArmas);
-        setDanyo(10);
+        super(nombre, vida, danyo, numAtaque);
+        setVida(60);
+        setDanyo(15);
     }
 
-    public int selectNumtAtack()
+    public int selectNumtAtack()    //Decido cauntos ataques hara ballerina
     {
         int ataque = rd.nextInt(100) + 1;
 
