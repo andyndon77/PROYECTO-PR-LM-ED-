@@ -35,7 +35,21 @@ public class Pocion
     //---------------------METODOS----------------
     public void MostrarPocion()
     {
-        System.out.println("La pocion te cura" + Cura + " puntos de salud");
-        System.out.println("Te quedan un total de " + Cantidad + " pociones");
+        System.out.println("La pocion te cura" + getCura() + " puntos de salud");
+        System.out.println("Te quedan un total de " + getCantidad() + " pociones");
+    }
+    
+    public int UsarPocion(Personajes heroe)
+    {
+        if (Cantidad > 0)
+        {
+            Cantidad--;
+            heroe.setVida(heroe.getVida() + getCura());
+            if (heroe.getVida() < 100)
+                {
+                    heroe.setVida(100); 
+                }
+        }
+        return 0;
     }
 }
