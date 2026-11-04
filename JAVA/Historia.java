@@ -5,6 +5,8 @@ import java.util.Random;
 public class Historia {
     public static void main(String[] args) throws InterruptedException  //agregamos esta cosa final para que los mensajes no aparezcan todos de golpe
     {
+        int max = 100;
+
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
 
@@ -45,11 +47,23 @@ public class Historia {
 
             System.out.println("Vamos a mi casa " + nombre + ". Alli te explicaré la situación.");
             System.out.println("De camino...");
-            Thread.sleep(2000); 
+            Thread.sleep(2000);
+            int posible_Arma1 = random.nextInt(max);
+                if (posible_Arma1 > 80)
+                    {
+                        System.out.println("*Te tropiezas");
+                        Bate bate = new Bate(1, "Bate de Madera", 15, 7);
+                        System.out.println("!!Te has encontrado un bate!!");
+                        bate.mostrarStats();
+                    }
             System.out.println("");
 
-            System.out.println("Entra sin miedo");
+            heroe.caminar();
             
+            System.out.println("Esta es mi casa, entra sin miedo");
+
+            
+
         }
 
        sc.close();
@@ -57,6 +71,5 @@ public class Historia {
     public void Combate(String nombre, String enemigo)
     {
         
-
     }
 }
