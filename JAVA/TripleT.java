@@ -1,6 +1,6 @@
 package JAVA;
 
-class TripleT extends Personajes
+class TripleT extends Personajes implements IAcciones
 {
     public TripleT(String nombre, int vida, int danyo, int numAtaque, int numArmas)
     {
