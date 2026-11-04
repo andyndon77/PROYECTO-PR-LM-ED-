@@ -1,5 +1,6 @@
 package JAVA;
 
-public class Inventario {
-    
+public class Inventario
+{
+        
 }
