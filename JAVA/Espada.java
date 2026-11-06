@@ -1,0 +1,4 @@
+public Espada extends Armas
+{
+    
+}
