@@ -3,31 +3,19 @@ package JAVA;
 public class Armas
 {
     //---------------------ATRIBUTOS----------------
-    private int numArma;
     private String nombre;
     private int danyo;
     private int durabilidad;
    
     //--------------------CONTRUCTOR PIRNCIPAL---------------
-    public Armas(int numArma, String nombre, int danyo, int durabilidad)
+    public Armas(String nombre, int danyo, int durabilidad)
     {
-        this.numArma = numArma;
         this.nombre = nombre;
         this.danyo = danyo;
         this.durabilidad = durabilidad;
     }
    
     //-----------------------GETTERS / SETTERS---------------
-    
-    public int getNumArma()
-    {
-        return numArma;
-    }
-
-    public void setNumArma(int numArma)
-    {
-        this.numArma = numArma;
-    }
 
     public String getNombre()
     {
