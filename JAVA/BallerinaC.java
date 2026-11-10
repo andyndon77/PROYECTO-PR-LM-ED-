@@ -1,7 +1,7 @@
 package JAVA;
 import java.util.Random;
 
-class BallerinaC extends Personajes
+class BallerinaC extends Personajes implements IEnemigos
 {
     Random rd = new Random();
 
@@ -25,5 +25,27 @@ class BallerinaC extends Personajes
         }
 
         return getNumAtaque();
+    }
+
+    public void Presentacion()
+    {
+        System.out.println("Buenos dias pequenyo. Veo que no estas aqui para hablar.");
+        System.out.println("Me acompanyarias en este baile?");
+    }
+
+        public void Derrotado(Personajes TripleT)
+    {
+        System.out.println("Maldito" + TripleT.getNombre() + " TripleT.");
+        System.out.println("Me habras podido vencer a mi, pero no a los Hermanos Garam");
+    }
+
+    public void enfurecerse()
+    {
+        System.out.println("Te voy a ensenyar el poder de mis patadas");
+    }
+
+    public void Victoria()
+    {
+        System.out.println("JO JO JO JO JO. No eres digno de bailar conmigo.");
     }
 }    
