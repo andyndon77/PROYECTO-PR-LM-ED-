@@ -2,12 +2,22 @@ package JAVA;
 
 class Bate extends Armas
 {
+    private int danyoAdicional;
     
-    public Bate(int numArma, String nombre, int danyo, int durabilidad)
+    public Bate(String nombre, int danyo, int durabilidad, int danyoAdicional)
     {
-        super(numArma, nombre, danyo, durabilidad);
-        setDanyo(15);
-        setNumArma(1);
+        super(nombre, danyo, durabilidad);
+        this.danyoAdicional = 3;
+    }
+
+    public void setDanyoAdiocional(int danyoAdicional)
+    {
+        this.danyoAdicional = danyoAdicional;
+    }
+
+    public int getDanyoAdicional(int danyoAdicional)
+    {
+        return this.danyoAdicional;
     }
 
     public void Descripcion()
@@ -16,4 +26,9 @@ class Bate extends Armas
         System.out.println("Te bonificara mas el daño que otras armas, no la malgastes");
     }
 
+    @Override
+    public void setDanyo(int danyio)
+    {
+        super.setDanyo(getDanyo() + danyoAdicional);
+    }
 }
