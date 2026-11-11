@@ -64,12 +64,23 @@ class TripleT extends Personajes implements IAcciones
     {
         return inventario.getArma(i);
     }
-    public int getNumPociones(){
+    public int getNumPociones()
+    {
         return inventario.getNumPociones(); 
     }
     public Pocion getPocion(int i)  
     { 
         return inventario.getPocion(i);
+    }
+
+    public void mostrarArmas()
+    {
+        inventario.mostrarArmas();
+    }
+
+    public void mostrarPociones()
+    {
+        inventario.mostrarPociones();
     }
 
 }
