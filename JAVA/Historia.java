@@ -1,4 +1,4 @@
-package JAVA;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -6,6 +6,7 @@ public class Historia
 {
     public static void main(String[] args) throws InterruptedException  //agregamos esta cosa final para que los mensajes no aparezcan todos de golpe
     {
+
         int max = 100;
 
         Scanner sc = new Scanner(System.in);
@@ -81,6 +82,7 @@ public class Historia
                         
                         System.out.println("Hey chico, este bate no es nada malo." + " Aunque parece q no te durara mucho, en caso de que se te rompa siempre puedes usar los puños.");
                         System.out.println("JA JA JA JA JA JA");
+                        heroe.añadirArma(bate);
                 }
             System.out.println("");
             Thread.sleep(2000);
@@ -113,6 +115,18 @@ public class Historia
 
             System.out.println();
 
+            System.out.println("Venga guardatelo todo y ponte en marcha");
+
+            heroe.añadirArma(cuchillo);
+            heroe.añadirPocion(pocionNormal);
+            heroe.añadirPocion(pocionSuper);
+
+            Thread.sleep(1000);
+
+            System.out.println("Tu: Juro que traere de vuelta a tu hija Aleister.");
+            heroe.caminar();
+            Thread.sleep(1000);
+            heroe.caminar();
         }
         do
         {}while(ranking = true);
@@ -121,8 +135,76 @@ public class Historia
 
         sc.close();
     }
-    public void Combate(String nombre, String enemigo)
+public static boolean simularCombate1(Scanner sc, TripleT heroe, Personajes enemigo)
+        throws InterruptedException
+{
+    System.out.println("Te acabas de encontrar con un enemigo: " + enemigo.getNombre());
+    if (enemigo instanceof BallerinaC)
     {
-        
+        ((BallerinaC)enemigo).Presentacion();
     }
+    else if(enemigo instanceof Tralalero)
+    {
+        ((Tralalero)enemigo).Presentacion();
+    }
+    //else {((Garama)enemigo).Presentacion;}
+    System.out.println("-------Entrando en batalla-------");
+    Thread.sleep(1000);
+
+    while (true)
+    {
+        System.out.println("-------------STATS ENEMIGO------------");
+        System.out.println(enemigo.getNombre() + " | " + enemigo.getVida() + "HP | " + enemigo.getDanyo() +  "damage | "  );
+        System.out.println("Que quieres hacer?");
+        System.out.println(" 1. Revisar Inventario");
+        System.out.println(" 2. Atacar");
+        System.out.println(" 3. Curarse");
+        System.out.println(" 3. Abandonar partida");
+
+        int decision = sc.nextInt();
+        boolean turnoGastado = false;
+
+        switch (decision)
+        {
+            case 1:
+                heroe.mostrarInventario();
+            case 2:
+                System.out.println("Con que arma");
+                System.out.println()
+                break;
+
+            case 3:
+                System.out.println("Has abandonado la partida...");
+                return false;
+
+            default:
+                System.out.println("Opcion no valida.");
+                break;
+        }
+
+        if (!turnoGastado)
+        {
+            continue;               // opcion invalida: no pierdes el turno
+        }
+
+        Thread.sleep(1000);
+
+        if (!enemigo.estaVivo())
+        {
+            System.out.println("Has derrotado a " + enemigo.getNombre() + "!");
+            return true;
+        }
+
+        System.out.println("Turno de " + enemigo.getNombre() + "...");
+        Thread.sleep(1000);
+        heroe.recibirDanyo(danioEnemigo);
+        System.out.println(enemigo.getNombre() + " te hace " + danioEnemigo + " de daño.");
+
+        if (!heroe.estaVivo())
+        {
+            System.out.println("Has caido en combate... GAME OVER");
+            return false;
+        }
+    }
+}
 }
