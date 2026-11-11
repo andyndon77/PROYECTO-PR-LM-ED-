@@ -40,24 +40,24 @@ public class Inventario
 
     //----------GETTER/SETTERS EXTERNOS-----------------
     public int getNumArmas()
-{
-    return numArmas;
-}
+    {
+        return numArmas;
+    }
 
-public Armas getArma(int i)
-{
-    return armas[i];
-}
+    public Armas getArma(int i)
+    {
+        return armas[i];
+    }
 
-public int getNumPociones()
-{
-    return numPociones;
-}
+    public int getNumPociones()
+    {
+        return numPociones;
+    }
 
-public Pocion getPocion(int i)
-{
-    return pociones[i];
-}
+    public Pocion getPocion(int i)
+    {
+        return pociones[i];
+    }
 
     public void mostrarInventario()
     {
@@ -86,5 +86,30 @@ public Pocion getPocion(int i)
             }
         }
     }
-
+    
+    //metodo para revisar armas y ver con cual quiere atacar
+    public void mostrarArmas()
+    {
+        System.out.println("-------------ARMAS--------------");
+        if (numArmas == 0) {
+            System.out.println("No tienes armas en la mochila.");
+        } else {
+            for (int i = 0; i < numArmas; i++)
+            {
+                System.out.println((i + 1) + ". " + armas[i].getNombre() + " (Daño: +" + armas[i].getDanyo() + " | Durabilidad: " + armas[i].getDurabilidad() + ")");
+            }
+        }
+    }
+    public void mostrarPociones()
+    {
+        System.out.println("----------------POCIONES--------------");
+        if (numPociones == 0) {
+            System.out.println("No tienes pociones.");
+        } else {
+            for (int i = 0; i < numPociones; i++) {
+                System.out.print((i + 1) + ". ");
+                pociones[i].MostrarPocion(); 
+            }
+        }
+    }
 }
