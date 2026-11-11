@@ -37,15 +37,15 @@ public class Pocion
         System.out.println("Te quedan un total de " + getCantidad() + " pociones");
     }
     
-    public int UsarPocion(Personajes heroe)
+    public int UsarPocion(Personajes TripleT)
     {
         if (Cantidad > 0)
         {
             Cantidad--;
-            heroe.setVida(heroe.getVida() + getCura());
-            if (heroe.getVida() > 100)
+            TripleT.setVida(TripleT.getVida() + getCura());
+            if (TripleT.getVida() > 100)
                 {
-                    heroe.setVida(100); 
+                    TripleT.setVida(100); 
                 }
         }
         return 0;
