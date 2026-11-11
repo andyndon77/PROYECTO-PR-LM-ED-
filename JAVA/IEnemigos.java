@@ -1,5 +1,3 @@
-package JAVA;
-
 public interface IEnemigos
 {
     public void Presentacion();

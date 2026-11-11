@@ -1,5 +1,3 @@
-package JAVA;
-
 public interface IAcciones
 {
     public void caminar();
