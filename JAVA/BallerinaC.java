@@ -24,6 +24,13 @@ class BallerinaC extends Personajes implements IEnemigos
 
         return getNumAtaque();
     }
+    @Override
+    public int Atacar(Personajes objevito)
+    {
+        selectNumtAtack();
+        System.out.println("Ballerina gira y lanza " + getNumAtaque() + " patada/s");
+        return super.Atacar(objevito);
+    }
 
     public void Presentacion()
     {
