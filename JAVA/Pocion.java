@@ -1,5 +1,3 @@
-package JAVA;
-
 public class Pocion
 {
     private int Cura;
@@ -9,7 +7,7 @@ public class Pocion
 
     public Pocion(int Cura, int Cantidad)
     {
-        this.Cura = 25;
+        this.Cura = Cura;
         this.Cantidad = Cantidad;
     }
     
@@ -45,7 +43,7 @@ public class Pocion
         {
             Cantidad--;
             heroe.setVida(heroe.getVida() + getCura());
-            if (heroe.getVida() < 100)
+            if (heroe.getVida() > 100)
                 {
                     heroe.setVida(100); 
                 }

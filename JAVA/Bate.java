@@ -1,5 +1,3 @@
-package JAVA;
-
 class Bate extends Armas
 {
     private int danyoAdicional;

@@ -1,6 +1,4 @@
-package JAVA;
 import java.util.Random;
-
 class BallerinaC extends Personajes implements IEnemigos
 {
     Random rd = new Random();

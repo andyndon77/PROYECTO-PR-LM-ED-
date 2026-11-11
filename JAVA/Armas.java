@@ -1,5 +1,3 @@
-package JAVA;
-
 public class Armas
 {
     //---------------------ATRIBUTOS----------------
@@ -32,7 +30,8 @@ public class Armas
     }
     
 
-    public void setDanyo(int danyo) {
+    public void setDanyo(int danyo) 
+    {
         this.danyo = danyo;
     }
 
@@ -42,7 +41,8 @@ public class Armas
     }
 
 
-    public void setDurabilidad(int durabilidad) {
+    public void setDurabilidad(int durabilidad)
+    {
         this.durabilidad = durabilidad;
     }
 
