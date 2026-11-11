@@ -1,5 +1,3 @@
-package JAVA;
-
 public class Personajes
 {
 
@@ -9,9 +7,10 @@ public class Personajes
     protected int danyo;
     protected int numAtaque = 1;
     protected int numArmas;
+    private boolean estaVivo;
 
     //constructor del heroe
-    public Personajes(String nombre, int vida, int danyo, int numAtaque, int numArmas)
+    public Personajes(String nombre, int vida, int danyo, int numAtaque, int numArmas, boolean estaVivo)
     {
         this.nombre = nombre;
         this.vida = vida;
@@ -31,48 +30,59 @@ public class Personajes
     // ------------ Setters / Getter--------------
 
 
-    public String getNombre() {
+    public String getNombre()
+    {
         return nombre;
     }
 
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre)
+    {
         this.nombre = nombre;
     }
 
 
-    public int getVida() {
+    public int getVida()
+    {
         return vida;
     }
 
 
-    public void setVida(int vida) {
+    public void setVida(int vida)
+    {
         this.vida = vida;
     }
 
 
-    public int getDanyo() {
+    public int getDanyo()
+    {
         return danyo;
     }
 
 
-    public void setDanyo(int danyo) {
+    public void setDanyo(int danyo)
+    {
         this.danyo = danyo;
     }
 
 
-    public int getNumAtaque() {
+    public int getNumAtaque()
+    {
         return numAtaque;
     }
 
 
-    public void setNumAtaque(int numAtaque) {this.numAtaque = numAtaque;}
-    public int getnumArmas() {
+    public void setNumAtaque(int numAtaque)
+    {
+        this.numAtaque = numAtaque;
+    }
+    public int getnumArmas()
+    {
         return numArmas;
     }
 
-
-    public void setArmas(int numArmas) {
+    public void setArmas(int numArmas)
+    {
         this.numArmas = numArmas;
     }
 
@@ -80,11 +90,13 @@ public class Personajes
     //------------------- Metodos de los personajes ---------------
 
 
-    public int hacerDanyo(int vida, int danyo)
+    public int hacerDanyo(Personajes objetivo)
     {
-        vida = vida - this.danyo * getNumAtaque();
-        System.out.println("Le has hecho " + danyo + " de daño. Le quedan " + vida + " puntos de vida");
-        return vida;
+
+        int total = danyo * getNumAtaque();
+        objetivo.recibirDanyo(total);
+        System.out.println(getNombre() + " le hace " + total + " de daño a " + objetivo.getNombre() + "Le quedan " + objetivo.getVida() + " puntos de vida");
+        return total;
 
     }
 
@@ -99,9 +111,14 @@ public class Personajes
         return this.vida;
     }
 
-    public int Atacar()
+    public int Atacar(Personajes objetivo)
     {
-        return hacerDanyo(vida, danyo);
+        return hacerDanyo(objetivo);
+    }
+
+    public boolean estaVivo()
+    {
+        return vida > 0;
     }
 
 }
