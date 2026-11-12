@@ -49,7 +49,16 @@ class TripleT extends Personajes implements IAcciones
     
     public int Atacar(Personajes objetivo, Armas arma)
     {
-        int total = danyo * numAtaque + arma.getDanyo();
+        int total;
+        if (arma.getDurabilidad() <= 0)
+        {
+            System.out.println("Tu arma " + arma.getNombre() + " esta rota. Vas a atacar con los puños.");
+            total = danyo * numAtaque;
+        }
+        else
+        {
+            total = danyo * numAtaque + arma.getDanyo();
+        }
         objetivo.recibirDanyo(total);
         System.out.println(getNombre() + " le hace " + total + " de daño a " + objetivo.getNombre()+ " con " + arma.getNombre() + ". Le quedan " + objetivo.getVida() + " puntos de vida");
         return total;
