@@ -61,7 +61,7 @@ public class Inventario
 
     public void mostrarInventario()
     {
-        System.out.println("--- TUS ARMAS ---");
+        System.out.println("--------------TUS ARMAS--------------------");
         if (numArmas == 0) {
             System.out.println("No tienes armas en la mochila.");
         }
@@ -72,7 +72,7 @@ public class Inventario
                 System.out.println((i + 1) + ". " + armas[i].getNombre()); 
             }
         }
-        System.out.println("--- TUS POCIONES ---");
+        System.out.println("--------------TUS POCIONES---------------");
         if (numPociones == 0)
         {
             System.out.println("No tienes pociones.");

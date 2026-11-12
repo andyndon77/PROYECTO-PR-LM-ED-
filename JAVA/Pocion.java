@@ -33,7 +33,7 @@ public class Pocion
     //---------------------METODOS----------------
     public void MostrarPocion()
     {
-        System.out.println("La pocion te cura" + getCura() + " puntos de salud");
+        System.out.println("La pocion te cura " + getCura() + " puntos de salud");
         System.out.println("Te quedan un total de " + getCantidad() + " pociones");
     }
     
@@ -45,7 +45,8 @@ public class Pocion
             TripleT.setVida(TripleT.getVida() + getCura());
             if (TripleT.getVida() > 100)
                 {
-                    TripleT.setVida(100); 
+                    TripleT.setVida(100);
+                    System.out.println(TripleT.getNombre() + ", ahora tienes " + TripleT.getVida() + " puntos de salud");
                 }
         }
         return 0;

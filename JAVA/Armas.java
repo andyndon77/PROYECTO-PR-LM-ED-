@@ -49,7 +49,7 @@ public class Armas
 
     //-----------------METODOS-------------
    
-    public int usarArma()
+    public boolean usarArma()
     {
         if (this.durabilidad > 0) 
         {
@@ -59,7 +59,7 @@ public class Armas
         {
             System.out.println("Tu arma se ha roto");
         }
-        return this.durabilidad;
+        return false;
     }
 
     public void mostrarStats()
