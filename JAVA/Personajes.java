@@ -95,7 +95,7 @@ public class Personajes
 
         int total = danyo * getNumAtaque();
         objetivo.recibirDanyo(total);
-        System.out.println(getNombre() + " le hace " + total + " de daño a " + objetivo.getNombre() + "Le quedan " + objetivo.getVida() + " puntos de vida");
+        System.out.println(getNombre() + " le hace " + total + " de daño a " + objetivo.getNombre() + ". Te quedan " + objetivo.getVida() + " puntos de vida");
         return total;
 
     }
@@ -107,6 +107,7 @@ public class Personajes
         if(this.vida < 0)
         {
             this.vida = 0;
+            this.estaVivo = false;
         }
         return this.vida;
     }

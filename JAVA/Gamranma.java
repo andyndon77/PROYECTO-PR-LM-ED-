@@ -15,7 +15,7 @@ public class Gamranma extends Personajes implements IEnemigos
     }
     public void Derrotado(Personajes TripleT)
     {
-        System.out.println("Sabian yo que tu eras el indicado, " +TripleT.getNombre() + ", siempre lo supe");
+        System.out.println("Sabian yo que tu eras el indicado, " + TripleT.getNombre() + ", siempre lo supe");
     }
     public void enfurecerse()
     {
