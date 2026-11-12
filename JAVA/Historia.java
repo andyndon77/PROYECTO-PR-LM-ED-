@@ -68,7 +68,7 @@ public class Historia
                     if (posible_Arma1 > 60)
                     {
                         System.out.println("*Te tropiezas");
-                        Bate bate = new Bate("Bate de Madera", 10, 7, 3);
+                        Bate bate = new Bate("Bate de Madera", 10, 5, 3);
                         System.out.println("!!Te has encontrado un bate!!");
 
                         System.out.println("-----------------------------------------");
@@ -105,16 +105,16 @@ public class Historia
                 System.out.println("===========================================");
                 Thread.sleep(2000);
 
-                System.out.println("No te preocupes por eso. Tengo cosas que te servirán en tu camino.");
+                System.out.println("Aleister: No te preocupes por eso. Tengo cosas que te servirán en tu camino.");
                 
                 Thread.sleep(1500);
-                System.out.println("En caso de q no tengas nada con lo que atacar te puedo dejar un cuchillo");
+                System.out.println("Alleister: En caso de q no tengas nada con lo que atacar te puedo dejar un cuchillo.");
                 Armas cuchillo = new Armas("Cuchillo de cocina", 5, 8);
                 heroe.añadirArma(cuchillo);
                 Thread.sleep(2000);
 
                 System.out.println("===========================================");
-                System.out.println("Toma 3 pociones de curacion.");
+                System.out.println("Aleister: Toma 3 pociones de curacion.");
                 Pocion pocionNormal = new Pocion(25, 3);
                 heroe.añadirPocion(pocionNormal);
                 System.out.println("===========================================");
@@ -122,7 +122,7 @@ public class Historia
                 System.out.println("===========================================");
                 Thread.sleep(3000);
 
-                System.out.println("Y una superpocion");
+                System.out.println("Aleister: Y una superpocion");
                 System.out.println("");
                 Pocion pocionSuper = new Pocion(40, 1);
                 heroe.añadirPocion(pocionSuper);
@@ -132,13 +132,13 @@ public class Historia
                 Thread.sleep(3000);
 
                 System.out.println("");
-                System.out.println("Con esto ya estas listo");
+                System.out.println("Aleister: Con esto ya estas listo");
                 Thread.sleep(1000);
-                System.out.println("Casi se me olvida, toma una mochila para que guardes tus cosas.");
+                System.out.println("Aleister: Casi se me olvida, toma una mochila para que guardes tus cosas.");
                 Thread.sleep(1500);
                 System.out.println("");
 
-                System.out.println("Venga guardatelo todo y ponte en marcha");
+                System.out.println("Aleister: Venga guardatelo todo y ponte en marcha");
 
                 Thread.sleep(2000);
 
@@ -146,7 +146,7 @@ public class Historia
                 System.out.println("Tu: Juro que traere de vuelta a tu hija Aleister.");
                 System.out.println("===========================================");
 
-                System.out.println("No me jures nada, yo voy a acompañarte en tu viaje. Mejor muestramelo.");
+                System.out.println("Aleister: No me jures nada, yo voy a acompañarte en tu viaje. Mejor muéstramelo.");
                 
                 System.out.println("===========================================");
                 heroe.caminar();
@@ -158,7 +158,7 @@ public class Historia
 
                 Thread.sleep(2000);
                 System.out.println("===================================================================");
-                System.out.println("¡¡¡¡¡¡¡¡¡CUIDADO!!!!!!!!");
+                System.out.println("Aleister: ¡¡¡¡¡¡¡¡¡CUIDADO!!!!!!!!");
                 System.out.println("===================================================================");
                 //PRIMERA BATALLA
                 Tralalero tralarero = new Tralalero("Tralalero",40, 15, 1);
@@ -170,15 +170,40 @@ public class Historia
                 
                 //SEGUNDA BATALLA
                 System.out.println("===================================================================");
-                System.out.println("¡¡¡¡¡¡¡¡¡CUIDADO!!!!!!!!");
+                System.out.println("Aleister: ¡¡¡¡¡¡¡¡¡CUIDADO!!!!!!!!");
                 BallerinaC ballerina = new BallerinaC("Ballerina", 60, 10, 1);
                 simularCombate(sc, heroe, ballerina);
                 System.out.println("===================================================================");
-                
+                heroe.caminar();
+                Thread.sleep(2000);
+                System.out.print("Tu: Aleister, que te pasa.");
+                Thread.sleep(1000);
+                System.out.println("¿T-t-te encuentras bien?");
+                System.out.println("");
+                System.out.println("Aleister: AaAAHHHhhh...");
+                System.out.println("Aleister: Muchacho, date prisa ahhh, coge esta poción");
+                Pocion megaPocion = new Pocion(60, 1);
+                int masMegaPocion = random.nextInt(max);
+                if (masMegaPocion < 50)
+                {
+                    megaPocion.setCantidad(1);
+                }
+                else if(masMegaPocion >= 50 && masMegaPocion < 70 )
+                {
+                    megaPocion.setCantidad(2);
+                    System.out.println("");
+                }
+                heroe.añadirPocion(megaPocion);
+                Thread.sleep(800);
+                System.out.println("Aleister: AAAAHHHHHHHHHHHHHHHHAAAA...");
+
+
                 //TERCERA BATALLA
                 System.out.println("====================================================================");
-                System.out.println("¡¡¡¡¡¡¡¡¡CUIDADO!!!!!!!!");
+                System.out.println("BATALLA FINAL");
                 System.out.println("====================================================================");
+                Gamranma gamranma = new Gamranma("Gamranma", 80, 20, 1, true);
+
             }
             if(ranking == true)
             {
@@ -253,7 +278,8 @@ public class Historia
         {
             ((Tralalero)enemigo).Presentacion();
         }
-        //else {((Garama)enemigo).Presentacion;}
+        else {((Gamranma)enemigo).Presentacion();}
+
         System.out.println("-------Entrando en batalla-------");
         Thread.sleep(1000);
         System.out.println("-------------STATS ENEMIGO------------");
@@ -366,7 +392,7 @@ public class Historia
                 {
                     ((Tralalero)enemigo).enfurecerse();
                 }
-                //else {((Gamranma)enemigo).enfurecerse();}
+                else {((Gamranma)enemigo).enfurecerse();}
             }
 
             System.out.println("===========================================");
