@@ -1,8 +1,9 @@
 class TripleT extends Personajes implements IAcciones
 {
     protected Inventario inventario;
+    protected int puntuacion;
 
-    public TripleT(String nombre, int vida, int danyo, int numAtaque, int numArmas, boolean estaVivo)
+    public TripleT(String nombre, int vida, int danyo, int numAtaque, int numArmas, boolean estaVivo, int puntuacion)
     {
         super(nombre, vida, danyo, numAtaque, numArmas, estaVivo);
         setDanyo(10);
@@ -90,6 +91,14 @@ class TripleT extends Personajes implements IAcciones
     public void mostrarPociones()
     {
         inventario.mostrarPociones();
+    }
+
+    public int getPuntuacion() {
+        return puntuacion;
+    }
+
+    public void setPuntuacion(int puntuacion) {
+        this.puntuacion = puntuacion;
     }
 
 }
