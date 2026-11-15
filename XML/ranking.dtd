@@ -1,0 +1,6 @@
+<!ELEMENT ranking (partida*)>
+<!ELEMENT partida (nombre*, puntuacion*)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT puntuacion (#PCDATA)>
+
+<!ATTLIST partida id CDATA #REQUIRED>
