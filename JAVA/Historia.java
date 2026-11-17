@@ -15,7 +15,7 @@ import java.util.Random;
 
 public class Historia 
 {
-    static final int MAX_RANKING = 5;
+    static final int MAX_RANKING = 10;
     public static void main(String[] args) throws InterruptedException  //agregamos esta cosa final para que los mensajes no aparezcan todos de golpe
     {
 
@@ -205,6 +205,8 @@ public class Historia
                 heroe.caminar();
                 Thread.sleep(2500);
                 int posible_Arma2 = random.nextInt(max);
+                System.out.println(" ");
+                Thread.sleep(700);
                 if(posible_Arma2 < 50)
                 {
                     System.out.println("¡¡¡¡¡¡¡TE HAS ENCONTRADO UN ARMA!!!!!!!!!");
@@ -219,8 +221,11 @@ public class Historia
                 }
                 else
                 {
+                    System.out.println("BUAAAA QUE BIEEEEN. TE HAS ENCONTRADO UNA SUPER POCION.");
                     pocionSuper.setCantidad(pocionSuper.getCantidad() + 1);
                 }
+                Thread.sleep(500);
+                System.out.println("");
 
                 //SEGUNDA BATALLA
                 System.out.println("===================================================================");
@@ -253,23 +258,30 @@ public class Historia
                 System.out.println("Aleister: Muchacho, date prisa ahhh, coge esta poción");
                 Pocion megaPocion = new Pocion(60, 1);
                 int masMegaPocion = random.nextInt(max);
+                Thread.sleep(1000);
+                System.out.println("====================================================================");
                 if (masMegaPocion < 50)
                 {
-                    System.out.println("|1 POCION|");
+                    System.out.println("Felicidades has ganado 1 pocion");
+                    System.out.println("|1 MEGA POCION|"); 
                     megaPocion.setCantidad(1);
                 }
                 else if(masMegaPocion >= 50 && masMegaPocion < 70 )
                 {
-                    System.out.println("|2 POCIONES|");
+                    System.out.println("Desarrolador: WOOOOOW, has recibido 2 pociones");
+                    System.out.println("|2 MEGA POCIONES|");
                     megaPocion.setCantidad(2);
                     
                 }
                 else
                 {
-                    System.out.println("|3 POCIONES|");
+                    System.out.println("Desarrollador: MADRE MIAAA 3 POCIONES RECIBIDAS");
+                    System.out.println("|3 MEGA POCIONES|");
+                    megaPocion.setCantidad(3);
                 }
+                System.out.println("====================================================================");
                 heroe.añadirPocion(megaPocion);
-                Thread.sleep(800);
+                Thread.sleep(1200);
                 System.out.println("Aleister: AAAAHHHHHHHHHHHHHHHHAAAA...");
 
                 //TERCERA BATALLA
@@ -462,7 +474,7 @@ public class Historia
                         System.out.println("Que pocion quieres usar");
                         heroe.mostrarPociones();
                         int posicionPocion = sc.nextInt();
-                                
+
                         if(posicionPocion >= 1 && posicionPocion <= heroe.getNumPociones())
                         {
                             Pocion pocionElegida = heroe.getPocion(posicionPocion - 1);
@@ -555,7 +567,7 @@ public class Historia
     {
         try
         {
-            File archivo = new File("ranking.xml");
+            File archivo = new File("XML/ranking.xml");
             if (!archivo.exists())
             {
                 return 0;
@@ -563,7 +575,7 @@ public class Historia
 
             DocumentBuilderFactory fabrica = DocumentBuilderFactory.newInstance();
             // permite el DOCTYPE pero no abre la DTD externa
-            fabrica.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+            fabrica.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", true);
 
             DocumentBuilder constructor = fabrica.newDocumentBuilder();
             Document documento = constructor.parse(archivo);
@@ -667,6 +679,7 @@ public class Historia
                 puntuacion.setTextContent(String.valueOf(puntos[i]));
                 partida.appendChild(puntuacion);
             }
+            File archivoDestino = new File("XML/ranking.xml");
 
             TransformerFactory transformerFabrica = TransformerFactory.newInstance();
             Transformer transformer = transformerFabrica.newTransformer();
@@ -674,7 +687,7 @@ public class Historia
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "ranking.dtd");  // asocia la DTD
 
-            transformer.transform(new DOMSource(documento), new StreamResult(new File("ranking.xml")));
+            transformer.transform(new DOMSource(documento), new StreamResult(archivoDestino));
             return true;
         }
         catch (Exception e)
