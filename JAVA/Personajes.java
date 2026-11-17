@@ -1,7 +1,7 @@
 public class Personajes
 {
-
-
+   
+    
     protected String nombre;
     protected int vida = 100;
     protected int danyo;
@@ -17,6 +17,7 @@ public class Personajes
         this.danyo = danyo;
         this.numAtaque = numAtaque;
         this.numArmas = numArmas;
+
     }
 
     //constructor de los enemigos

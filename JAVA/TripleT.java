@@ -9,6 +9,7 @@ class TripleT extends Personajes implements IAcciones
         setDanyo(10);
         setVida(100);
         this.inventario = new Inventario(5, 3);
+        this.puntuacion = puntuacion;
     }
 
     public void caminar()

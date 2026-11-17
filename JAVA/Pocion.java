@@ -37,18 +37,25 @@ public class Pocion
         System.out.println("Te quedan un total de " + getCantidad() + " pociones");
     }
     
-    public int UsarPocion(Personajes TripleT)
+    public boolean UsarPocion(TripleT heroe)
     {
         if (Cantidad > 0)
         {
             Cantidad--;
-            TripleT.setVida(TripleT.getVida() + getCura());
-            if (TripleT.getVida() > 100)
+            heroe.setVida(heroe.getVida() + getCura());
+            if (heroe.getVida() > 100)
                 {
-                    TripleT.setVida(100);
-                    System.out.println(TripleT.getNombre() + ", ahora tienes " + TripleT.getVida() + " puntos de salud");
+                    heroe.setVida(100);
+                    System.out.println(heroe.getNombre() + ", ahora tienes " + heroe.getVida() + " puntos de salud");
+                    return true;
                 }
+            else
+            {
+                System.out.println("Vida: " + heroe.getVida() + " HP");
+                return true;
+            }
         }
-        return 0;
+        System.out.println("Te has quedado sin pociones de este tipo");
+        return false;
     }
 }

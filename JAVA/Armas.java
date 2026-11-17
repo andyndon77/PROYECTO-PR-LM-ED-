@@ -4,7 +4,7 @@ public class Armas
     private String nombre;
     private int danyo;
     private int durabilidad;
-   
+
     //--------------------CONTRUCTOR PIRNCIPAL---------------
     public Armas(String nombre, int danyo, int durabilidad)
     {
@@ -12,7 +12,7 @@ public class Armas
         this.danyo = danyo;
         this.durabilidad = durabilidad;
     }
-   
+
     //-----------------------GETTERS / SETTERS---------------
 
     public String getNombre()
@@ -48,7 +48,7 @@ public class Armas
 
 
     //-----------------METODOS-------------
-   
+    
     public boolean usarArma()
     {
         if (this.durabilidad > 0) 
