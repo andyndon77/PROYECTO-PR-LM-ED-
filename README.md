@@ -67,7 +67,6 @@ También puedes abrir la carpeta en VS Code o en tu IDE y pulsar **Run** sobre `
 ## Personajes
 
 | TripleT (héroe) | Tralalero | BallerinaC | Gamranma |
-|----| |----| |---| |---|
 | [TripleT](Photos/triplet.jpg) | [Tralalero](Photos/tralalero.png) | [BallerinaC](Photos/ballerina.jpg) | [Gamranma](Photos/gamranma.jpg)
 
 
