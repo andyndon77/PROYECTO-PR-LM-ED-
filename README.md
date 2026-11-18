@@ -68,7 +68,7 @@ También puedes abrir la carpeta en VS Code o en tu IDE y pulsar **Run** sobre `
 
 | Triplet (héroe) | Tralalero | Ballerina | Gamranma |
 |:---:|:---:|:---:|
-| <img src="Photos/triplet.png" alt="Triplet" width="200"> | <img src = "Photos/tralalero.png" alt="Tralalero" width="200">| <img src="Photos/ballerina.png" alt="Ballerina" width="200"> | <img src="Photos/gamranma.png" alt="Gamranma" width="200"> |
+| <img src="Photos/triplet.jpg" alt="Triplet" width="200"> | <img src = "Photos/tralalero.png" alt="Tralalero" width="200">| <img src="Photos/ballerina.jpg" alt="Ballerina" width="200"> | <img src="Photos/gamranma.jpg" alt="Gamranma" width="200"> |
 
 
 ## Autor
