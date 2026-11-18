@@ -10,7 +10,7 @@ class BallerinaC extends Personajes implements IEnemigos
         setDanyo(15);
     }
 
-    public int selectNumtAtack()    //Decido cauntos ataques hara ballerina
+    public int selectNumtAtack()    //Decido cuantos ataques hara ballerina
     {
         int ataque = rd.nextInt(100) + 1;
 
@@ -34,23 +34,23 @@ class BallerinaC extends Personajes implements IEnemigos
 
     public void Presentacion()
     {
-        System.out.println("Buenos dias pequenyo. Veo que no estas aqui para hablar.");
-        System.out.println("Me acompanyarias en este baile?");
+        System.out.println(getNombre() + ": Buenos dias pequenyo. Veo que no estas aqui para hablar.");
+        System.out.println(getNombre() + ": Me acompanyarias en este baile?");
     }
 
         public void Derrotado(Personajes TripleT)
     {
-        System.out.println("Maldito" + TripleT.getNombre() + " TripleT.");
-        System.out.println("Me habras podido vencer a mi, pero no a los Hermanos Garam");
+        System.out.println(getNombre() +  ": Maldito" + TripleT.getNombre() + " TripleT.");
+        System.out.println(getNombre() + ": Me habras podido vencer a mi, pero no a los Hermanos Garam");
     }
 
     public void enfurecerse()
     {
-        System.out.println("Te voy a ensenyar el poder de mis patadas");
+        System.out.println(getNombre() + ": Te voy a ensenyar el poder de mis patadas");
     }
 
     public void Victoria()
     {
-        System.out.println("JO JO JO JO JO. No eres digno de bailar conmigo.");
+        System.out.println(getNombre() + ": JO JO JO JO JO. No eres digno de bailar conmigo.");
     }
 }    

@@ -286,9 +286,9 @@ public class Historia
 
                 //TERCERA BATALLA
                 System.out.println("====================================================================");
-                System.out.println("BATALLA FINAL");
+                System.out.println("BATALLA FINAL (el enemigo puede hacer un ataque especial)");
                 System.out.println("====================================================================");
-                Gamranma gamranma = new Gamranma("Gamranma", 80, 20, 1, true);
+                Gamranma gamranma = new Gamranma("Gamranma", 80, 20, 1);
                 if(simularCombate(sc, heroe, gamranma) == false)
                 {
                     System.out.println(" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
