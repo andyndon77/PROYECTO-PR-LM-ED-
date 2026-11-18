@@ -2,7 +2,27 @@
 <!DOCTYPE ranking SYSTEM "ranking.dtd">
 <ranking>
     <partida id="1">
+        <nombre>Andy</nombre>
+        <puntuacion>335</puntuacion>
+    </partida>
+    <partida id="2">
         <nombre>Michu</nombre>
         <puntuacion>310</puntuacion>
+    </partida>
+    <partida id="3">
+        <nombre>Pedro</nombre>
+        <puntuacion>200</puntuacion>
+    </partida>
+    <partida id="4">
+        <nombre>camilo</nombre>
+        <puntuacion>100</puntuacion>
+    </partida>
+    <partida id="5">
+        <nombre>juan</nombre>
+        <puntuacion>100</puntuacion>
+    </partida>
+    <partida id="6">
+        <nombre>Roja</nombre>
+        <puntuacion>0</puntuacion>
     </partida>
 </ranking>
