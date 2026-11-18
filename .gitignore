@@ -1,5 +1,15 @@
 # Compiled class file
 *.class
+/target/
+/build/
+/out/
+
+# VS Code y metadatos de Eclipse
+.vscode/
+.settings/
+.factorypath
+.project
+.classpath
 
 # Log file
 *.log
@@ -28,3 +38,5 @@ JAVA/CrearXML.java
 JAVA/ModificarXML.java
 XML/juego.xml
 alumnos.xml
+.vscode
+Photos/
