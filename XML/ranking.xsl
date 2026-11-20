@@ -8,7 +8,7 @@
       <head>
         <meta charset="UTF-8"/>
         <title>RANKING-TOP 10</title>
-        <link rel="stylesheet" type="text/css" href="ranking.css"/>
+        <link rel="stylesheet" type="text/css" href="ranking_CSS.css"/>
       </head>
       <body>
         <h2>Ranking de Partidas</h2>
