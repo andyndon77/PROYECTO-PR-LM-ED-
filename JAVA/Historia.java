@@ -52,7 +52,7 @@ public class Historia
                         aventura = true;
                         mainMenu = false;
                     break;
-                case 2: System.out.println("Bienvenido al apartado de Ranking. Aqui veras las 5 mejores puntuaciones de tus partidas anteriores.");
+                case 2: System.out.println("Bienvenido al apartado de Ranking. Aqui veras las 10 mejores puntuaciones de tus partidas anteriores.");
                         ranking = true;
                         mainMenu = false;
                     break;
