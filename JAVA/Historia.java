@@ -575,7 +575,7 @@ public class Historia
 
             DocumentBuilderFactory fabrica = DocumentBuilderFactory.newInstance();
             // permite el DOCTYPE pero no abre la DTD externa
-            fabrica.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", true);
+            fabrica.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
 
             DocumentBuilder constructor = fabrica.newDocumentBuilder();
             Document documento = constructor.parse(archivo);
